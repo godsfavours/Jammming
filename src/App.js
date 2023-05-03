@@ -6,11 +6,14 @@ import SearchResults from './components/search-results/SearchResults';
 
 function App() {
   const [searchResults, setSearchResults] = useState([{
-    title: 'Hello'
+    title: 'Hello',
+    artist: 'Godsfavour'
   }, {
-    title: 'World'
+    title: 'World',
+    artist: 'Simon'
   }, {
-    title: '!'
+    title: '!',
+    artist: 'Mouse'
   }]);
 
   const onSearchSong = (userInput) => {
@@ -18,7 +21,7 @@ function App() {
   }
 
   return (
-    <section>
+    <>
       <header>
         <h1>Jammming</h1>
       </header>
@@ -27,11 +30,9 @@ function App() {
           <h2>Search <span className='spotify-text'>Spotify</span></h2>
           <SearchBar onSearchSong={onSearchSong} />
         </section>
-        <section>
-          <SearchResults searchResults={searchResults} />
-        </section>
+        <SearchResults searchResults={searchResults} />
       </main>
-    </section>
+    </>
   );
 }
 
