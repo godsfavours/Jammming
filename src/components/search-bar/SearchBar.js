@@ -9,14 +9,14 @@ function SearchBar({ onSearchSong }) {
 
     const clickHandler = () => {
         onSearchSong(input);
-    }
+    };
 
     return (
         <>
             <input type="text" placeholder="Enter song name" onInput={inputHandler} />
             <button onClick={clickHandler}>Search</button>
         </>
-    )
+    );
 };
 
 export default SearchBar;
