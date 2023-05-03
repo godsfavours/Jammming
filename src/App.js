@@ -3,6 +3,7 @@ import './App.css';
 
 import SearchBar from './components/search-bar/SearchBar';
 import SearchResults from './components/search-results/SearchResults';
+import Playlist from './components/playlist/Playlist';
 
 function App() {
   const [searchResults, setSearchResults] = useState([{
@@ -15,6 +16,7 @@ function App() {
     title: '!',
     artist: 'Mouse'
   }]);
+  const [addedTracks, setAddedTracks] = useState([]);
 
   const onSearchSong = (userInput) => {
     console.log(userInput);
@@ -31,6 +33,7 @@ function App() {
           <SearchBar onSearchSong={onSearchSong} />
         </section>
         <SearchResults searchResults={searchResults} />
+        <Playlist addedTracks={addedTracks} />
       </main>
     </>
   );
