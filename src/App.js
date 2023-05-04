@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 import SearchSection from './components/search-section/SearchSection';
-import SearchResultsSection from './components/search-results-section/SearchResultsSection';
+import SearchResultsSectionContainer from './components/containers/search-results-section/SearchResultsSectionContainer';
 import PlaylistSectionContainer from './components/containers/playlist-section/PlaylistSectionContainer';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
       <main>
         <SearchSection setSearchResults={setSearchResults} />
         <div id='split-view'>
-          <SearchResultsSection searchResults={searchResults} addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
+          <SearchResultsSectionContainer searchResults={searchResults} addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
           <PlaylistSectionContainer addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
         </div>
       </main>
