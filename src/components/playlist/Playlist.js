@@ -1,11 +1,19 @@
 import TrackList from "../track-list/TrackList";
 import './Playlist.css';
 
-function Playlist({ addedTracks, onRemoveTrack, onCreatePlaylist }) {
+function Playlist({ addedTracks, setAddedTracks }) {
+    const createPlaylist = (playlistTitle) => {
+        console.log('adding playlist', playlistTitle, addedTracks);
+    };
+
     const submitHandler = (event) => {
         event.preventDefault();
         const playlistTitle = event.target.elements.title.value;
-        onCreatePlaylist(playlistTitle);
+        createPlaylist(playlistTitle);
+    };
+
+    const onRemoveTrack = trackToRemove => {
+        setAddedTracks(addedTracks.filter(track => track.id !== trackToRemove.id));
     };
 
     return (
