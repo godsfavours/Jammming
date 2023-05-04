@@ -3,7 +3,7 @@ import './App.css';
 
 import SearchSection from './components/search-section/SearchSection';
 import SearchResultsSection from './components/search-results-section/SearchResultsSection';
-import PlaylistSection from './components/playlist-section/PlaylistSection';
+import PlaylistSectionContainer from './components/containers/playlist-section/PlaylistSectionContainer';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -18,11 +18,11 @@ function App() {
         <SearchSection setSearchResults={setSearchResults} />
         <div id='split-view'>
           <SearchResultsSection searchResults={searchResults} addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
-          <PlaylistSection addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
+          <PlaylistSectionContainer addedTracks={addedTracks} setAddedTracks={setAddedTracks} />
         </div>
       </main>
     </>
   );
-}
+};
 
 export default App;
