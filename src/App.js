@@ -4,21 +4,10 @@ import './App.css';
 import SearchBar from './components/search-bar/SearchBar';
 import SearchResults from './components/search-results/SearchResults';
 import Playlist from './components/playlist/Playlist';
+import SearchSpotify from './modules/SearchSpotify';
 
 function App() {
-  const [searchResults, setSearchResults] = useState([{
-    id: '1',
-    title: 'Hello',
-    artist: 'Godsfavour'
-  }, {
-    id: '2',
-    title: 'World',
-    artist: 'Simon'
-  }, {
-    id: '3',
-    title: '!',
-    artist: 'Mouse'
-  }]);
+  const [searchResults, setSearchResults] = useState([]);
   const [addedTracks, setAddedTracks] = useState([]);
 
   const onAddTrack = trackToAdd => {
@@ -34,8 +23,24 @@ function App() {
     console.log('adding playlist', playlistTitle, addedTracks);
   };
 
-  const onSearchSong = (userInput) => {
-    console.log(userInput);
+  const onSearchSong = async (userInput) => {
+    let tracks = await SearchSpotify(userInput);
+
+    tracks = tracks.map(track => {
+      let artists = track.artists.reduce((artistsString, currentArtist) => {
+        return artistsString += currentArtist.name + ', ';;
+      }, '');
+      artists = artists.slice(0, -2); // remove ', '
+
+      return {
+        image_src: track.album.images[0],
+        artists,
+        name: track.name,
+        id: track.id
+      }
+    });
+
+    setSearchResults(tracks);
   };
 
   return (

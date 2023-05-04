@@ -10,7 +10,7 @@ function Playlist({ addedTracks, onRemoveTrack, onCreatePlaylist }) {
 
     return (
         <section id="playlist-sn">
-            <h3>Create a Playlist</h3>
+            <h2>Create a Playlist</h2>
             {addedTracks.length > 0 ? (
                 <>
                     <form onSubmit={submitHandler}>
