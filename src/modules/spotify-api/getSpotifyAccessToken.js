@@ -1,4 +1,4 @@
-import { SpotifyClientID, SpotifyClientSecret } from "../secret";
+import { SpotifyClientID, SpotifyClientSecret } from "../../secret";
 
 const getSpotifyAccessToken = async () => {
     let token_obj = JSON.parse(localStorage.getItem('spy_token'));

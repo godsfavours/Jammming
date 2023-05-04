@@ -4,7 +4,7 @@ import './App.css';
 import SearchBar from './components/search-bar/SearchBar';
 import SearchResults from './components/search-results/SearchResults';
 import Playlist from './components/playlist/Playlist';
-import SearchSpotify from './modules/SearchSpotify';
+import searchSpotify from './modules/spotify-api/searchSpotify';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -24,7 +24,7 @@ function App() {
   };
 
   const onSearchSong = async (userInput) => {
-    let tracks = await SearchSpotify(userInput);
+    let tracks = await searchSpotify(userInput);
 
     tracks = tracks.map(track => {
       let artists = track.artists.reduce((artistsString, currentArtist) => {
@@ -36,7 +36,8 @@ function App() {
         image_src: track.album.images[0],
         artists,
         name: track.name,
-        id: track.id
+        id: track.id,
+        uri: track.uri
       }
     });
 
