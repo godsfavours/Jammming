@@ -1,5 +1,7 @@
-import TrackList from '../../track-list/TrackList';
 import './PlaylistSectionView.css';
+
+import TrackList from '../track-list/TrackList';
+
 
 function PlaylistSectionView({ addedTracks, submitHandler, onRemoveTrack }) {
     return (

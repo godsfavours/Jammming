@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchResultsSectionView.css";
-import TrackList from "../../track-list/TrackList";
+import TrackList from "../track-list/TrackList";
 
 function SearchResultsSectionView({ searchResults, onAddTrack }) {
     return (

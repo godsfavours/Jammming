@@ -1,15 +1,15 @@
-.track {
+.track-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
 }
 
-.track-details {
+.track-card-details {
     display: flex;
 }
 
-.track img {
+.track-card img {
     width: 100px;
     height: 100%;
 }
