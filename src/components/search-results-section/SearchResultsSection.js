@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchResults.css";
+import "./SearchResultsSection.css";
 import TrackList from "../track-list/TrackList";
 
 function SearchResults({ searchResults, addedTracks, setAddedTracks }) {
@@ -9,7 +9,7 @@ function SearchResults({ searchResults, addedTracks, setAddedTracks }) {
     };
 
     return (
-        <section id="search-results-sn">
+        <section id="search-results-section">
             <h2>Search Results</h2>
             {searchResults.length > 0 ? <TrackList tracks={searchResults} section="search-results" trackClickCallback={onAddTrack} /> : 'Search for a song using the section above.'}
         </section>

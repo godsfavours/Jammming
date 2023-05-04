@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './SearchSection.css';
 import searchSpotify from "../../modules/spotify-api/searchSpotify";
 
 function Search({ setSearchResults }) {

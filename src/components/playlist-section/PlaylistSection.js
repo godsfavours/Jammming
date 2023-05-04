@@ -1,7 +1,7 @@
 import TrackList from "../track-list/TrackList";
-import './Playlist.css';
+import './PlaylistSection.css';
 
-function Playlist({ addedTracks, setAddedTracks }) {
+function PlaylistSection({ addedTracks, setAddedTracks }) {
     const createPlaylist = (playlistTitle) => {
         console.log('adding playlist', playlistTitle, addedTracks);
     };
@@ -17,7 +17,7 @@ function Playlist({ addedTracks, setAddedTracks }) {
     };
 
     return (
-        <section id="playlist-sn">
+        <section id="playlist-section">
             <h2>Create a Playlist</h2>
             {addedTracks.length > 0 ? (
                 <>
@@ -32,4 +32,4 @@ function Playlist({ addedTracks, setAddedTracks }) {
     );
 }
 
-export default Playlist;
+export default PlaylistSection;
