@@ -1,8 +1,9 @@
 import TrackList from "../track-list/TrackList";
+import './Playlist.css';
 
 function Playlist({ addedTracks }) {
     return (
-        <section>
+        <section id="playlist-sn">
             <h3>Create Playlist</h3>
             {addedTracks.length > 0 ? (
                 <>

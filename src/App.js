@@ -24,16 +24,16 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Jammming</h1>
-      </header>
       <main>
+        <h1>Jammming</h1>
         <section id="search-sn">
           <h2>Search <span className='spotify-text'>Spotify</span></h2>
           <SearchBar onSearchSong={onSearchSong} />
         </section>
-        <SearchResults searchResults={searchResults} />
-        <Playlist addedTracks={addedTracks} />
+        <div id='split-view'>
+          <SearchResults searchResults={searchResults} />
+          <Playlist addedTracks={addedTracks} />
+        </div>
       </main>
     </>
   );
