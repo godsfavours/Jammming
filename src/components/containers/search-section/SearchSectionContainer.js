@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import './SearchSection.css';
+import { useState } from "react";
 
-import searchSpotify from "../../modules/spotify-api/searchSpotify";
+import searchSpotify from "../../../modules/spotify-api/searchSpotify";
+import SearchSectionView from "../../views/search-section/SearchSectionView";
 
-function Search({ setSearchResults }) {
+function SearchSectionContainer({ setSearchResults }) {
     const [input, setInput] = useState('');
 
     const inputHandler = (event) => {
@@ -35,13 +35,7 @@ function Search({ setSearchResults }) {
         setSearchResults(tracks);
     };
 
-    return (
-        <section id="search-sn">
-            <h2>Search <span className='spotify-text'>Spotify</span></h2>
-            <input type="text" placeholder="Enter song name" onInput={inputHandler} />
-            <button onClick={onSearchTracks}>Search</button>
-        </section>
-    );
+    return <SearchSectionView inputHandler={inputHandler} onSearchTracks={onSearchTracks} />
 };
 
-export default Search;
+export default SearchSectionContainer;
