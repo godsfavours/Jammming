@@ -25,6 +25,10 @@ function App() {
 
   const onSearchSong = async (userInput) => {
     let tracks = await searchSpotify(userInput);
+    if (!tracks) {
+      alert('The search failed due to an unexpected error.');
+      return;
+    }
 
     tracks = tracks.map(track => {
       let artists = track.artists.reduce((artistsString, currentArtist) => {
