@@ -1,4 +1,4 @@
-import TrackCardContainer from '../containers/track-card/TrackCardContainer';
+import TrackCardContainer from '../../containers/track-card/TrackCardContainer';
 
 import './TrackList.css';
 
