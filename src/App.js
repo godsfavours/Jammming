@@ -30,6 +30,10 @@ function App() {
     setAddedTracks(addedTracks.filter(track => track.id !== trackToRemove.id));
   };
 
+  const onCreatePlaylist = (playlistTitle) => {
+    console.log('adding playlist', playlistTitle, addedTracks);
+  };
+
   const onSearchSong = (userInput) => {
     console.log(userInput);
   };
@@ -44,7 +48,7 @@ function App() {
         </section>
         <div id='split-view'>
           <SearchResults searchResults={searchResults} onAddTrack={onAddTrack} />
-          <Playlist addedTracks={addedTracks} onRemoveTrack={onRemoveTrack} />
+          <Playlist addedTracks={addedTracks} onRemoveTrack={onRemoveTrack} onCreatePlaylist={onCreatePlaylist} />
         </div>
       </main>
     </>
