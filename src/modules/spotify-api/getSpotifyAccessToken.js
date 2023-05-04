@@ -1,4 +1,4 @@
-import { SpotifyClientID, SpotifyClientSecret } from "../../secret";
+import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from "../../secret";
 
 const getSpotifyAccessToken = async () => {
     let token_obj = JSON.parse(localStorage.getItem('spy_token'));
@@ -11,7 +11,7 @@ const getSpotifyAccessToken = async () => {
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `grant_type=client_credentials&client_id=${SpotifyClientID}&client_secret=${SpotifyClientSecret}`
+        body: `grant_type=client_credentials&client_id=${SPOTIFY_CLIENT_ID}&client_secret=${SPOTIFY_CLIENT_SECRET}`
     });
     token_obj = await res.json();
     token_obj.expires_in_date = Date.now() + token_obj.expires_in;
