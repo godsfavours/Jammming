@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-import SearchBar from './components/search-bar/SearchBar';
+import Search from './components/search/Search';
 import SearchResults from './components/search-results/SearchResults';
 import Playlist from './components/playlist/Playlist';
 import searchSpotify from './modules/spotify-api/searchSpotify';
@@ -50,12 +50,11 @@ function App() {
 
   return (
     <>
-      <main>
+      <header>
         <h1>Jammming</h1>
-        <section id="search-sn">
-          <h2>Search <span className='spotify-text'>Spotify</span></h2>
-          <SearchBar onSearchSong={onSearchSong} />
-        </section>
+      </header>
+      <main>
+        <Search onSearchSong={onSearchSong} />
         <div id='split-view'>
           <SearchResults searchResults={searchResults} onAddTrack={onAddTrack} />
           <Playlist addedTracks={addedTracks} onRemoveTrack={onRemoveTrack} onCreatePlaylist={onCreatePlaylist} />
