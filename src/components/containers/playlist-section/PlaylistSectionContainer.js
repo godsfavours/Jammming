@@ -1,8 +1,15 @@
 import PlaylistSectionView from "../../views/playlist-section/PlaylistSectionView";
+import savePlaylistToSpotify from "../../../modules/spotify-api/savePlaylistToSpotify";
 
 function PlaylistSectionContainer({ addedTracks, setAddedTracks }) {
-    const createPlaylist = (playlistTitle) => {
-        console.log('adding playlist', playlistTitle, addedTracks);
+    const createPlaylist = async (name) => {
+        try {
+            const playlistID = await savePlaylistToSpotify(addedTracks, name);
+            alert(`Successfully created playlist. You can listen to it at: https://open.spotify.com/playlist/${playlistID}`);
+            setAddedTracks([]);
+        } catch (e) {
+            alert(`Something went wrong creating the playlist. Try again later.`);
+        }
     };
 
     const submitHandler = (event) => {

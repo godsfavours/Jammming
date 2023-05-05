@@ -14,6 +14,7 @@ function PlaylistSectionView({ addedTracks, submitHandler, onRemoveTrack }) {
                         <TrackList tracks={addedTracks} section="playlist" trackClickCallback={onRemoveTrack} />
                         <input type="submit" value="Save to Spotify" />
                     </form>
+
                 </>
             ) : 'Add a track to create a playlist.'}
         </section>
